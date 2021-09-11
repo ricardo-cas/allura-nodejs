@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ricardo-cas/allura-nodejs#readme",
   "dependencies": {
+    "consign": "^0.1.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
   },
