@@ -1,3 +1,5 @@
+const appoinment = require('./../models/appointments');
+
 module.exports = app => {
     app.get('/', (req, res) => {
         res.send('Olá da rota principal 💯🆗💹');
@@ -8,6 +10,8 @@ module.exports = app => {
     })
 
     app.post('/atendimentos', (req, res) => {
-        res.send('Rota de post funcionando 💯🆗💹')
+        const appoinments = req.body
+        appoinment.addNewAppointment(appoinments);
+        res.send('Post funcionando 💯🆗💹');
     });
 }

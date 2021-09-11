@@ -1,6 +1,20 @@
 const customExpress = require('./config/customExpress');
-const app = customExpress()
+const dbConnection = require('./infraestrutura/connection');
+const tables = require('./infraestrutura/tables');
 
-app.listen(3000, () => {
-    console.log(`Servidor ouvindo na porta 3000`);
-});
+const port = process.env.PORT || 3000;
+
+dbConnection.connect(error => {
+    if (error) {
+        console.error(error);
+    } else {
+        console.log(`Conectado com sucesso na Base`);
+        tables.init(dbConnection);
+
+        const app = customExpress()
+
+        app.listen(port, () => {
+            console.log(`Servidor ouvindo na porta ${port}`);
+        });
+    }
+})

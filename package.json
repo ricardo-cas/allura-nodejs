@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint --fix src"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,12 @@
   },
   "homepage": "https://github.com/ricardo-cas/allura-nodejs#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "consign": "^0.1.6",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
