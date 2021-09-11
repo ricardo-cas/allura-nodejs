@@ -10,5 +10,3 @@ module.exports = () => {
         .into(app);
     return app;
 }
-
-

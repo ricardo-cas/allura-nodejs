@@ -6,4 +6,8 @@ module.exports = app => {
     app.get('/atendimentos', (req, res) => {
         res.send('Olá da rota de Atendimentos 🔘👨🏻‍⚕️');
     })
+
+    app.post('/atendimentos', (req, res) => {
+        res.send('Rota de post funcionando 💯🆗💹')
+    });
 }
