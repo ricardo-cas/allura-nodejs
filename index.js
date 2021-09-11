@@ -1,13 +1,15 @@
 const customExpress = require('./config/customExpress');
-const conexao = require('./infraestrutura/conexao')
+const dbConnection = require('./infraestrutura/connection');
+const tables = require('./infraestrutura/tables');
 
 const port = process.env.PORT || 3000;
 
-conexao.connect(error => {
+dbConnection.connect(error => {
     if (error) {
         console.error(error);
     } else {
-        console.log(`Conectado com sucesso na Base`)
+        console.log(`Conectado com sucesso na Base`);
+        tables.init(dbConnection);
 
         const app = customExpress()
 
