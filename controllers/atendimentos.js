@@ -8,6 +8,7 @@ module.exports = app => {
     })
 
     app.post('/atendimentos', (req, res) => {
+        console.log(req.body);
         res.send('Rota de post funcionando 💯🆗💹')
     });
 }
