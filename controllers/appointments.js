@@ -11,7 +11,6 @@ module.exports = app => {
 
     app.post('/atendimentos', (req, res) => {
         const appoinments = req.body
-        appoinment.addNewAppointment(appoinments);
-        res.send('Post funcionando 💯🆗💹');
+        appoinment.addNewAppointment(appoinments, res);
     });
 }
