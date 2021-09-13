@@ -49,6 +49,17 @@ class Appoinment {
             }
         })
     }
+    listById(id, res) {
+        const sql = `SELECT * FROM appointments WHERE id=${id}`
+        connection.query(sql, (error, results) => {
+            const uniqueAppointment = results[0]
+            if (error) {
+                res.status(400).json(error);
+            } else {
+                res.status(200).json(uniqueAppointment);
+            }
+        })
+    }
 }
 
 module.exports = new Appoinment;
