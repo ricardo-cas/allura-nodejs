@@ -39,6 +39,16 @@ class Appoinment {
             });
         }
     }
+    listAppointment(res) {
+        const sql = 'SELECT * FROM appointments'
+        connection.query(sql, (error, results) => {
+            if (error) {
+                res.status(400).json(error);
+            } else {
+                res.status(200).json(results);
+            }
+        })
+    }
 }
 
 module.exports = new Appoinment;
